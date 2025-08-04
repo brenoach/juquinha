@@ -28,6 +28,11 @@ body {
     line-height: 1.6;
 }
 
+body img {
+    max-width: 400px;
+    height: 400px
+}
+
 /* ====================================================== */
 /* 2. CABEÇALHO                                          */
 /* ====================================================== */
@@ -401,4 +406,8 @@ footer {
     padding: 10px 0;
     text-align: center;
     font-size: 0.9rem;
+}
+footer img {
+    height: 30pt;
+    width: auto;
 }
