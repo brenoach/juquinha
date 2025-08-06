@@ -1,0 +1,353 @@
+/* ====================================================== */
+/* 1. RESET & VARIÁVEIS GLOBAIS                           */
+/* ====================================================== */
+:root {
+    --primary-color: #c28140;
+    --secondary-color: #a56d35;
+    --background-color: #F8Ecd1;
+    --text-color: #333;
+    --light-text: #F8Ecd1;
+    --dark-text: #343a40;
+    --red-accent: #d32f2f;
+    
+    --green-accent: #388e3c;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ====================================================== */
+/* 2. CABEÇALHO                                          */
+/* ====================================================== */
+.cabecalho {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 10px;
+    box-shadow: var(--shadow);
+    height: 150px;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- Logo --- */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 110px;
+    width: auto;
+}
+
+.logo-texto {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.1;
+    color: white;
+}
+
+/* --- Navegação --- */
+.menu-principal ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.menu-principal a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.menu-principal a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* --- Contato --- */
+.contato-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: large;
+    color: white;
+}
+
+.contato-item img {
+    height: 24px;
+}
+
+.mascote-container img {
+    height: 110px;
+}
+
+/* ====================================================== */
+/* 3. CONTEÚDO PRINCIPAL                                 */
+/* ====================================================== */
+main {
+    background-color: var(--background-color);
+    max-width: 1600px;
+    margin: 10px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: var(--dark-text);
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+/* Linhas separadoras */
+.linha-separadoravermelha, 
+.linha-separadoraverde {
+    border: none;
+    height: 10px;
+    margin: 40px 0;
+    border-radius: 5px;
+}
+
+.linha-separadoravermelha { 
+    background-color: var(--red-accent); 
+}
+
+.linha-separadoraverde { 
+    background-color: var(--green-accent); 
+}
+
+/* ====================================================== */
+/* 4. TABELAS DE CARDÁPIO                                */
+/* ====================================================== */
+.tabelas {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.tabela {
+    width: 48%;
+    background-color: var(--red-accent);
+    color: var(--light-text);
+    font-size: 1rem;
+    margin-top: 20px;
+    border: 2px solid var(--dark-text);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.tabela table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela th {
+    font-size: 1.3rem;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid var(--light-text);
+}
+.tabela th.titulotable {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--light-text);
+    font-weight: bold;    padding: 15px;
+}
+.tabela td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid rgba(248, 236, 209, 0.3);
+}
+
+.tabela tr:last-child td {
+    border-bottom: none; 
+}
+
+.nome {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--light-text);
+}
+
+.descricao {
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.preco {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--light-text);
+}
+/* ====================================================== */
+/* RESPONSIVIDADE                                        */
+/* ====================================================== */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .cabecalho {
+        padding: 10px 10px;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .logo-texto {
+        font-size: 1.5rem;
+    }
+    
+    .menu-principal ul {
+        gap: 15px;
+    }
+    
+    .contato-container {
+        gap: 15px;
+    }
+    
+    .mascote-container img {
+        height: 70rem   ;
+    }
+    
+    .tabelas {
+        flex-direction: column;
+    }
+    
+    .tabela {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Celulares grandes (576px - 768px) */
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+    
+    .logo-container {
+        margin-bottom: 15px;
+    }
+    
+    .menu-principal ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin: 15px 0;
+    }
+    
+    .menu-principal a {
+        font-size: 1rem;
+        padding: 6px 10px;
+    }
+    
+    .contato-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .contato-item {
+        font-size: 0.9rem;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Celulares pequenos (até 576px) */
+@media (max-width: 576px) {
+    .logo-texto {
+        font-size: 1.3rem;
+    }
+    
+    .logo-img {
+        height: 60px;
+    }
+    
+    .menu-principal ul {
+        gap: 8px;
+    }
+    
+    .menu-principal a {
+        font-size: 0.9rem;
+    }
+    
+    .contato-item {
+        font-size: 0.8rem;
+    }
+    
+    .mascote-container img {
+        height: 50px;
+    }
+    
+    .tabela {
+        padding: 15px;
+    }
+    
+    .tabela th {
+        font-size: 1rem;
+        padding: 8px;
+    }
+    
+    .tabela td {
+        padding: 8px 6px;
+        font-size: 0.9rem;
+    }
+    
+    .nome, .preco {
+        font-size: 0.9rem;
+    }
+    
+    .descricao {
+        font-size: 0.8rem;
+    }
+}
+/* ====================================================== */
+/* 5. RODAPÉ                                             */
+/* ====================================================== */
+footer {
+    background-color: var(--dark-text);
+    color: #adb5bd;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
